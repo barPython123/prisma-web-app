@@ -1,6 +1,13 @@
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+
+interface PrismaShape {
+  name: string;
+  surname: string;
+  age: number;
+  doesLikePineapple: boolean;
+}
 // const exampleData = {
 //   name: "Bruce",
 //   surname: "Wayne",
@@ -10,7 +17,7 @@ const prisma = new PrismaClient();
 
 // !! ad TS Intraface for req.body based on exampleData
 // pass arguments from express/req-body here ->
-async function createUser(args: any) {
+async function createUser(args: PrismaShape) {
   const query = await prisma.user.create({
     data: args,
   });
