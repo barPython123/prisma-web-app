@@ -1,9 +1,10 @@
 import React from "react";
+import CreateUser from "./components/CreateUser";
 
 function App() {
   return (
     <div>
-      <h1>Hello React with TypeScript ❤️</h1>
+      <CreateUser></CreateUser>
     </div>
   );
 }

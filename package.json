@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gui_start_server" : "cd ./frontend/ && npm run runDevServer",
+    "backend_start" : "cd ./backend/ && npm run express_start"
   },
   "keywords": [],
   "author": "",
