@@ -14,6 +14,12 @@ function User() {
       <td>{someUser.surname}</td>
       <td>{someUser.age}</td>
       <td>{someUser.doesLikePineapple ? "true" : "false"}</td>
+      <td>
+        <button>Edit User</button>
+      </td>
+      <td>
+        <button>Delete User</button>
+      </td>
     </tr>
   );
 }
