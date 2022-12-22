@@ -1,5 +1,8 @@
 import React from "react";
 import User from "./User";
+
+// take Array of objects as props and for each displays different user with data
+
 function ShowUsers() {
   return (
     <div>
