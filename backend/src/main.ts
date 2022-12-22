@@ -5,9 +5,10 @@ import { showAll } from "./queries/showAllUsers";
 const app = express();
 const PORT = 6020;
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   console.log("endpoint reached");
-  res.json(showAll()); //it does not await, result is empty {} body
+  // console.log(showAll()) 
+  res.json(await showAll()); //it does not await, result is empty {} body
 });
 
 app.listen(PORT, () => {

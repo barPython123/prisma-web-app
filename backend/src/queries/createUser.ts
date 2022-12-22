@@ -2,10 +2,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 const exampleData = {
-  name: "Michał",
-  surname: "Maniek",
-  age: 33,
-  doesLikePineapple: false,
+  name: "Bruce",
+  surname: "Wayne",
+  age: 45,
+  doesLikePineapple: true,
 };
 
 // pass arguments from express/req-body here ->
