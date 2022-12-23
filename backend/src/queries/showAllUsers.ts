@@ -6,7 +6,7 @@ export async function showAll() {
   const results = await prisma.user.findMany();
   //   console.table(results);
   const resultsObjet = {
-    data1: results,
+    usersData: results,
   };
   return resultsObjet; //returns object with array of objects [{},{},{}]
 }
