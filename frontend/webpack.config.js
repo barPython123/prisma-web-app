@@ -26,4 +26,7 @@ module.exports = {
       template: "./src/template.html",
     }),
   ],
+  output: {
+    clean: true,
+  },
 };

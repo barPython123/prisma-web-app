@@ -1,19 +1,19 @@
 import React from "react";
 
-function User() {
-  const someUser = {
-    name: "Greg",
-    surname: "Dabrowski",
-    age: 30,
-    doesLikePineapple: true,
-  };
+interface Passed {
+  name: string;
+  surname: string;
+  age: number;
+  doesLikePineapple: boolean;
+}
 
+function User(props: Passed) {
   return (
     <tr>
-      <td>{someUser.name}</td>
-      <td>{someUser.surname}</td>
-      <td>{someUser.age}</td>
-      <td>{someUser.doesLikePineapple ? "true" : "false"}</td>
+      <td>{props.name}</td>
+      <td>{props.surname}</td>
+      <td>{props.age}</td>
+      <td>{props.doesLikePineapple ? "true" : "false"}</td>
       <td>
         <button>Edit User</button>
       </td>
