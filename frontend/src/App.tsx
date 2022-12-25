@@ -1,5 +1,6 @@
 import React from "react";
 import CreateUser from "./components/CreateUser";
+import NavBar from "./components/NavBar";
 import ShowUsers from "./components/ShowUsers";
 
 const someUser = {
@@ -18,6 +19,7 @@ const allUsers = [
 function App() {
   return (
     <div>
+      <NavBar></NavBar>
       {/* <CreateUser></CreateUser> */}
       <ShowUsers props={allUsers}></ShowUsers>
     </div>
