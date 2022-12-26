@@ -8,12 +8,15 @@ const PORT = 6020;
 app.use(express.json())
 app.use(cors())
 app.get("/", async (req, res) => {
-  console.log(`endpoint "/" reached`);
+  const date = new Date()
+  console.log(`endpoint "/" reached at ${date} `);
   // console.log(showAll()) 
   res.json(await showAll()); //it does not await, result is empty {} body
 });
 
-app.get('/create', async (req, res) => {
+
+// change to POST
+app.post('/create', async (req, res) => {
   console.log(`endpoint "/create" reached`)
   console.log(req.body)
   await createUser(req.body)
