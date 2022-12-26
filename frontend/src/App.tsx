@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CreateUser from "./components/CreateUser";
-import NavBar from "./components/NavBar";
 import ShowUsers from "./components/ShowUsers";
 
 const someUser = {
@@ -10,20 +9,16 @@ const someUser = {
   doesLikePineapple: true,
 };
 
-const allUsers = [
-  someUser,
-  { name: "Tymon", surname: "Str", age: 50, doesLikePineapple: true },
-  { name: "Iza", surname: "Bartczak", age: 18, doesLikePineapple: false },
-];
-
 function App() {
   const [users1, setUsers1] = useState([]);
   const [view, setView] = useState(false);
-  // move that to show users component ?
+
+  // move useEffect to ShowUsers
   useEffect(() => {
-    usr();
+    fetchUsers();
   }, []);
-  async function usr() {
+
+  async function fetchUsers() {
     fetch("http://localhost:6020/")
       .then((response) => response.json())
       .then((data) => setUsers1(data.usersData));
@@ -31,11 +26,25 @@ function App() {
 
   return (
     <div>
-      <NavBar></NavBar>
-      {view && <CreateUser></CreateUser>}
-      {/* <CreateUser></CreateUser> */}
-      <ShowUsers props={users1}></ShowUsers>
-      {/* <button onClick={usr}>Test Fetch</button> */}
+      <button
+        onClick={() => {
+          setView(true);
+        }}
+      >
+        Test
+      </button>
+      <button
+        onClick={() => {
+          setView(false);
+        }}
+      >
+        Test
+      </button>
+      {view ? (
+        <CreateUser></CreateUser>
+      ) : (
+        <ShowUsers props={users1}></ShowUsers>
+      )}
     </div>
   );
 }
