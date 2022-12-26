@@ -18,10 +18,11 @@ const allUsers = [
 
 function App() {
   const [users1, setUsers1] = useState([]);
-
+  const [view, setView] = useState(false);
+  // move that to show users component ?
   useEffect(() => {
-    usr()
-  },[])
+    usr();
+  }, []);
   async function usr() {
     fetch("http://localhost:6020/")
       .then((response) => response.json())
@@ -30,7 +31,8 @@ function App() {
 
   return (
     <div>
-      {/* <NavBar></NavBar> */}
+      <NavBar></NavBar>
+      {view && <CreateUser></CreateUser>}
       {/* <CreateUser></CreateUser> */}
       <ShowUsers props={users1}></ShowUsers>
       {/* <button onClick={usr}>Test Fetch</button> */}
