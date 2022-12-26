@@ -6,7 +6,7 @@ import createUser from "./queries/createUser";
 const app = express();
 const PORT = 6020;
 app.use(express.json())
-
+app.use(cors())
 app.get("/", async (req, res) => {
   console.log(`endpoint "/" reached`);
   // console.log(showAll()) 
