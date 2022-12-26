@@ -1,3 +1,23 @@
 body {
     background-color: rgba(223, 229, 54, 0.363);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.App {
+    height: 98vh;
+    max-width: 500px;
+    min-width: 500px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavBar {
+    background-color: beige;
+    margin-top: -200px;
 }

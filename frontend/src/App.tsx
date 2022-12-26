@@ -25,21 +25,23 @@ function App() {
   }
 
   return (
-    <div>
-      <button
-        onClick={() => {
-          setView(true);
-        }}
-      >
-        Test
-      </button>
-      <button
-        onClick={() => {
-          setView(false);
-        }}
-      >
-        Test
-      </button>
+    <div className="App">
+      <div className="NavBar">
+        <button
+          onClick={() => {
+            setView(true);
+          }}
+        >
+          Create User
+        </button>
+        <button
+          onClick={() => {
+            setView(false);
+          }}
+        >
+          Show Users
+        </button>
+      </div>
       {view ? (
         <CreateUser></CreateUser>
       ) : (
