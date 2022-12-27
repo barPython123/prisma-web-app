@@ -19,6 +19,15 @@ function CreateUser() {
       doesLikePineapple: pineappleState,
     };
     console.log(objToSend);
+
+    fetch("http://localhost:6020/create", {
+      mode: "cors",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(objToSend)
+    });
   }
 
   return (

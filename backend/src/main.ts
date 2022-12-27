@@ -5,23 +5,30 @@ import createUser from "./queries/createUser";
 
 const app = express();
 const PORT = 6020;
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 app.get("/", async (req, res) => {
-  const date = new Date()
+  const date = new Date();
   console.log(`endpoint "/" reached at ${date} `);
-  // console.log(showAll()) 
+  // console.log(showAll())
   res.json(await showAll()); //it does not await, result is empty {} body
 });
 
-
 // change to POST
-app.post('/create', async (req, res) => {
-  console.log(`endpoint "/create" reached`)
-  console.log(req.body)
-  await createUser(req.body)
-  res.send('ok')
-})
+app.post("/create", async (req, res) => {
+  console.log(`endpoint "/create" reached`);
+  console.log(req.body);
+  console.log(typeof req.body.age);
+
+  const objctToWrie = {
+    name: req.body.name,
+    surname: req.body.surname,
+    age: parseInt(req.body.age),
+    doesLikePineapple: req.body.doesLikePineapple,
+  };
+  await createUser(objctToWrie);
+  res.send("ok");
+});
 
 app.listen(PORT, () => {
   console.log("server stared!");
