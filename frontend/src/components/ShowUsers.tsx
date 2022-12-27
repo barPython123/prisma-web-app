@@ -7,7 +7,7 @@ function ShowUsers(props: any) {
   const [fetchedUsers, setFetchedUsers] = useState([]);
 
   return (
-    <div>
+    <div className="UserList">
       <table>
         <thead>
           <tr>

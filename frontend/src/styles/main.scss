@@ -1,23 +1,30 @@
 body {
-    background-color: rgba(223, 229, 54, 0.363);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    min-width: 500px
 }
 
 .App {
-    height: 98vh;
-    max-width: 500px;
     min-width: 500px;
-    background-color: azure;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 98vh;
+    background-color: beige;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .NavBar {
-    background-color: beige;
-    margin-top: -200px;
+    position: absolute;
+    margin-top: 100px;
+}
+
+.UserList {    
+    position: absolute;
+    margin-top: 150px;
+
+    background-color: burlywood;
+}
+
+.CreateUser {
+    position: absolute;
+    margin-top: 150px;
+
+    background-color: rgb(239, 141, 14);
 }

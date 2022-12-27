@@ -1,28 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CreateUser() {
+  const [pineappleState, setPineappleState] = useState(false);
+
+  function grabData() {
+    const nameValue = (document.getElementById("inp-name") as HTMLInputElement)
+      .value as String;
+    const surnameValue = (
+      document.getElementById("inp-surname") as HTMLInputElement
+    ).value as String;
+    const ageValue = (document.getElementById("inp-age") as HTMLInputElement)
+      .value as unknown as Number;
+
+    const objToSend = {
+      name: nameValue,
+      surname: surnameValue,
+      age: ageValue,
+      doesLikePineapple: pineappleState,
+    };
+    console.log(objToSend);
+  }
+
   return (
-    <div>
+    <div className="CreateUser">
       <h1>Create User</h1>
       <div>
         <div>
           <label>Name :</label>
-          <input type="text"></input>
+          <input id="inp-name" type="text"></input>
         </div>
         <div>
           <label>Surname :</label>
-          <input type="text"></input>
+          <input id="inp-surname" type="text"></input>
         </div>
         <div>
           <label>Age :</label>
-          <input type="text"></input>
+          <input id="inp-age" type="number"></input>
         </div>
         <div>
           <label>Pineapple Status :</label>
-          <input type="checkbox"></input>
+          <input
+            id="inp-pineapple"
+            type="checkbox"
+            onChange={() => setPineappleState(!pineappleState)}
+          ></input>
         </div>
       </div>
-      <button>Send Data to Server!</button>
+      <button onClick={grabData}>Send Data to Server!</button>
     </div>
   );
 }
