@@ -42,11 +42,7 @@ function App() {
           Show Users
         </button>
       </div>
-      {view ? (
-        <CreateUser></CreateUser>
-      ) : (
-        <ShowUsers props={users1}></ShowUsers>
-      )}
+      {view ? <CreateUser></CreateUser> : <ShowUsers></ShowUsers>}
     </div>
   );
 }
