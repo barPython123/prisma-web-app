@@ -16,9 +16,8 @@ app.get("/", async (req, res) => {
 
 // change to POST
 app.post("/create", async (req, res) => {
-  console.log(`endpoint "/create" reached`);
+  console.log(`endpoint "/create" reached}`);
   console.log(req.body);
-  console.log(typeof req.body.age);
 
   const objctToWrie = {
     name: req.body.name,
