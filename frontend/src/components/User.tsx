@@ -1,6 +1,7 @@
 import React from "react";
 
 interface Passed {
+  usrId: number;
   name: string;
   surname: string;
   age: number;
@@ -10,7 +11,7 @@ interface Passed {
 function User(props: Passed) {
   return (
     <tr>
-      <td>{props.name}</td>
+      <td>{props.usrId + " " + props.name}</td>
       <td>{props.surname}</td>
       <td>{props.age}</td>
       <td>{props.doesLikePineapple ? "true" : "false"}</td>

@@ -22,16 +22,17 @@ function ShowUsers() {
       <table>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Surname</td>
-            <td>Age</td>
-            <td>Likes Pineapple?</td>
+            <td className="col-name">Name</td>
+            <td className="col-surname">Surname</td>
+            <td className="col-age">Age</td>
+            <td className="col-pineapple">Likes Pineapple?</td>
           </tr>
         </thead>
         <tbody>
           {users1.map((element: any) => {
             return (
               <User
+                usrId={element.id}
                 name={element.name}
                 surname={element.surname}
                 age={element.age}
