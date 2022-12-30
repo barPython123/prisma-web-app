@@ -25,6 +25,7 @@ app.post("/update", async (req, res) => {
 
 app.get("/delete", async (req, res) => {
   deleteUser();
+  res.send("user deleted");
 });
 
 app.post("/create", async (req, res) => {

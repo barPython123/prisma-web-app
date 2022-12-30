@@ -9,6 +9,17 @@ interface Passed {
 }
 
 function User(props: Passed) {
+
+  function EditUser() {
+    /* 
+    1) open new comonent with selected record
+    2) send push request to server and call update Function
+    */
+  }
+
+  function DeleteUser() {
+    
+  }
   return (
     <tr>
       <td>{props.usrId + " " + props.name}</td>
